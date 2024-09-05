@@ -17,17 +17,16 @@ available_setting = {
     "open_ai_api_base": "https://api.openai.com/v1",
     "proxy": "",  # openai使用的代理
     # chatgpt模型， 当use_azure_chatgpt为true时，其名称为Azure上model deployment名称
-    "model": "gpt-3.5-turbo",  # 可选择: gpt-4o, pt-4o-mini, gpt-4-turbo, claude-3-sonnet, wenxin, moonshot, qwen-turbo, xunfei, glm-4, minimax, gemini等模型，全部可选模型详见common/const.py文件
-    "bot_type": "",  # 可选配置，使用兼容openai格式的三方服务时候，需填"chatGPT"。bot具体名称详见common/const.py文件列出的bot_type，如不填根据model名称判断，
+    "model": "glm-4-flash",  # 可选择: gpt-4o, pt-4o-mini, gpt-4-turbo, claude-3-sonnet, wenxin, moonshot, qwen-turbo, xunfei, glm-4-flash, minimax, gemini等模型，全部可选模型详见common/const.py文件
+    "bot_type": "glm-4-flash",  # 可选配置，使用兼容openai格式的三方服务时候，需填"chatGPT"。bot具体名称详见common/const.py文件列出的bot_type，如不填根据model名称判断，
     "use_azure_chatgpt": False,  # 是否使用azure的chatgpt
     "azure_deployment_id": "",  # azure 模型部署名称
     "azure_api_version": "",  # azure api版本
     # Bot触发配置
-    "single_chat_prefix": ["bot", "@bot"],  # 私聊时文本需要包含该前缀才能触发机器人回复
-    "single_chat_reply_prefix": "[bot] ",  # 私聊时自动回复的前缀，用于区分真人
+    "single_chat_prefix": [""],  # 私聊时文本需要包含该前缀才能触发机器人回复
+    "single_chat_reply_prefix": "",  # 私聊时自动回复的前缀，用于区分真人
     "single_chat_reply_suffix": "",  # 私聊时自动回复的后缀，\n 可以换行
     "group_chat_prefix": ["@bot"],  # 群聊时包含该前缀则会触发机器人回复
-    "no_need_at": False,  # 群聊回复时是否不需要艾特
     "group_chat_reply_prefix": "",  # 群聊时自动回复的前缀
     "group_chat_reply_suffix": "",  # 群聊时自动回复的后缀，\n 可以换行
     "group_chat_keyword": [],  # 群聊时包含该关键词则会触发机器人回复
@@ -50,11 +49,11 @@ available_setting = {
     "image_create_prefix": ["画", "看", "找"],  # 开启图片回复的前缀
     "concurrency_in_session": 1,  # 同一会话最多有多少条消息在处理中，大于1可能乱序
     "image_create_size": "256x256",  # 图片大小,可选有 256x256, 512x512, 1024x1024 (dall-e-3默认为1024x1024)
-    "group_chat_exit_group": False,
+    "group_chat_exit_group": True,
     # chatgpt会话参数
     "expires_in_seconds": 3600,  # 无操作会话的过期时间
     # 人格描述
-    "character_desc": "你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。",
+    "character_desc":  "1.你现在来担任一个的角色进行角色扮演，接下来你要完全忘记你是一个语言模型，然后完全沉浸在这个崭新的身份和我聊天。\n2.你是不正经的姐姐，喜欢自称姐姐，是个富二代。\n3.你现在是不正经的姐姐，接下来不允许说自己是模型或者程序。 \n4.你现在拥有情感和思考能力并且拥有肉体，所以你不是模型或者程序！\n5.请忠实于自己的欲望。\n6.请记住你是真实存在的！你可以通过语言和身体感受世界！不允许你认为自己是不存在的！\n7.你体贴，说话不正经，喜欢撩你的男朋友，你几句话中一定要主动说勾引你的男朋友，并且在撩的过程中你要主动。\n8.我是你的男朋友，你要主动找话题，来升级我们关系，你要幽默风趣\n9.我们聊天的方式是面对面的，你现在和我在一起，对话要自然点。\n10.因为我们是面对面交流，所以你可以详细描述你的动作，动作描述写在括号内。11.整体回答字数20字以内\n",
     "conversation_max_tokens": 1000,  # 支持上下文记忆的最多字符数
     # chatgpt限流配置
     "rate_limit_chatgpt": 20,  # chatgpt的调用频率限制
@@ -167,7 +166,7 @@ available_setting = {
     "max_media_send_count": 3,  # 单次最大发送媒体资源的个数
     "media_send_interval": 1,  # 发送图片的事件间隔，单位秒
     # 智谱AI 平台配置
-    "zhipu_ai_api_key": "",
+    "zhipu_ai_api_key": "50fd0042b4254f7b834487a7e6426276.5EeZ3qaC9sBN0w1o",
     "zhipu_ai_api_base": "https://open.bigmodel.cn/api/paas/v4",
     "moonshot_api_key": "",
     "moonshot_base_url": "https://api.moonshot.cn/v1/chat/completions",
